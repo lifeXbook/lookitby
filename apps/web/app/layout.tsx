@@ -4,7 +4,7 @@ import { Metadata } from "next";
 import "@workspace/ui/globals.css"
 import { Providers } from "@/components/providers"
 
-const title = "Lifexbook - Look it by your view.";
+const title = "Lifexbook - Look it by your view";
 const description =
   "Life eXcute Book";
 
