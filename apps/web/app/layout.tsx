@@ -1,7 +1,25 @@
 import { Geist, Geist_Mono } from "next/font/google"
+import { Metadata } from "next";
 
 import "@workspace/ui/globals.css"
 import { Providers } from "@/components/providers"
+
+const title = "Lifexbook - Look it by your view.";
+const description =
+  "Life eXcute Book";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  icons: {
+    icon: "/logo.jpg"
+  },
+  openGraph: {
+    title,
+    description,
+  },
+};
+
 
 const fontSans = Geist({
   subsets: ["latin"],
