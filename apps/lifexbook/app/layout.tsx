@@ -11,17 +11,9 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  openGraph: {
-    title,
-    description,
-  },
-  twitter: {
-    title,
-    description,
-    card: "summary_large_image",
-    creator: "@steventey",
-  },
-  metadataBase: new URL("https://novel.sh"),
+  icons: {
+    icon: "/logo.png"
+  }
 };
 
 export const viewport: Viewport = {
