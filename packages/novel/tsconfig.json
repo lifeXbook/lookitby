@@ -1,0 +1,9 @@
+{
+  "extends": "@workspace/typescript-config/novel-react.json",
+  "include": ["./src/**/*"],
+  "exclude": ["dist", "build", "node_modules"],
+  "compilerOptions": {
+    "declarationMap": false,
+    "outDir": "dist"
+  }
+}
