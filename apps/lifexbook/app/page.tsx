@@ -1,17 +1,25 @@
 "use client";
 
+import { Authenticated, Unauthenticated } from "convex/react";
+import { SignInButton, UserButton } from "@clerk/nextjs";
 import { useQuery } from "convex/react";
 import { api } from "@workspace/backend/convex/_generated/api";
 
-export default function Page() {
-
-  const users = useQuery(api.user.getMany);
+export default function Home() {
   return (
-    <div className="flex items-center justify-center min-h-svh">
-      <div className="flex flex-col items-center justify-center gap-4">
-        <h1 className="text-2xl font-bold">Hello World!</h1>
-        {JSON.stringify(users)}
-      </div>
-    </div>
-  )
+    <>
+      <Authenticated>
+        <UserButton />
+        <Content />
+      </Authenticated>
+      <Unauthenticated>
+        <SignInButton />
+      </Unauthenticated>
+    </>
+  );
+}
+
+function Content() {
+  const userId = useQuery(api.users.getUserId);
+  return <div>UserId: {JSON.stringify(userId)}</div>;
 }
